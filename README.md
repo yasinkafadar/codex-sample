@@ -22,16 +22,6 @@ Run the bot locally with:
 python weather_bot.py
 ```
 The script schedules tweets at **08:00**, **12:00**, **16:00**, and **20:00** each day.
-
-## Deployment
-
-You can deploy this project to a server or run it automatically with **GitHub Actions**.
-
-1. Add the secrets from `.env.example` to your repository under **Settings → Secrets and variables → Actions**.
-2. The included workflow file `.github/workflows/bot.yml` installs dependencies and executes `weather_bot.py` at **08:00**, **12:00**, **16:00**, and **20:00** UTC daily.
-3. Commit and push the workflow file, then enable GitHub Actions on your repository.
-
-## Development Tasks
 The repository was prepared following these steps:
 1. Project setup with a Python environment and required libraries.
 2. API credentials are loaded from a `.env` file for security.
