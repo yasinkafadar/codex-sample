@@ -1,75 +1,41 @@
-Development Plan:
-1. Preparation
+# Istanbul Weather Bot
 
-Setup project repository and environment.
+This project posts regular weather updates for Istanbul to Twitter.
 
-Acquire necessary API keys (Twitter and weather service).
+## Setup
 
-2. Integration with APIs
+1. Create and activate a virtual environment:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Copy `.env.example` to `.env` and add your Twitter and OpenWeatherMap API keys.
 
-Integrate Twitter API using a library like Tweepy.
+## Usage
 
-Integrate a weather API (e.g., OpenWeatherMap).
+Run the bot locally with:
+```bash
+python weather_bot.py
+```
+The script schedules tweets at **08:00**, **12:00**, **16:00**, and **20:00** each day.
 
-3. Data Retrieval and Formatting
+## Deployment
 
-Fetch weather data for Istanbul.
+You can deploy this project to a server or run it automatically with **GitHub Actions**.
 
-Format tweet messages clearly.
+1. Add the secrets from `.env.example` to your repository under **Settings → Secrets and variables → Actions**.
+2. The included workflow file `.github/workflows/bot.yml` installs dependencies and executes `weather_bot.py` at **08:00**, **12:00**, **16:00**, and **20:00** UTC daily.
+3. Commit and push the workflow file, then enable GitHub Actions on your repository.
 
-4. Scheduling Tweets
+## Development Tasks
 
-Automate tweet posting at predefined times.
-
-5. Deployment
-
-Deploy to a cloud service or a scheduled task system (e.g., cron or GitHub Actions).
-
-Step-by-step Development Tasks:
-Task 1: Project Setup
-Create GitHub repository.
-
-Initialize Python environment (virtualenv or venv).
-
-Install necessary libraries (requests, tweepy, python-dotenv).
-
-Task 2: Obtain API Keys
-Register on Twitter Developer Portal and create an app to get keys.
-
-Register on OpenWeatherMap and get an API key.
-
-Task 3: Configure API Access
-Create .env file to store API credentials securely.
-
-Write Python script to load environment variables.
-
-Task 4: Fetch Weather Data
-Write function to fetch data from weather API for Istanbul.
-
-Test data retrieval using API key.
-
-Task 5: Format Tweets
-Write a function to format fetched data into readable tweets.
-
-Example tweet:
-"🌦️ Istanbul Weather Update 🌦️
-Temperature: 20°C, Condition: Cloudy
-Wind: 15 km/h, Humidity: 75%."
-
-Task 6: Twitter Integration
-Set up Tweepy to authenticate and send tweets.
-
-Test tweeting manually.
-
-Task 7: Automation
-Schedule the Python script to run four times daily (e.g., at 08:00, 12:00, 16:00, and 20:00).
-
-Test the scheduled tweets locally or with GitHub Actions.
-
-Task 8: Deployment
-Deploy your script on a cloud hosting service (e.g., Heroku, AWS Lambda, or GitHub Actions cron job).
-
-Task 9: Monitoring and Maintenance
-Set up basic logging and error handling.
-
-Monitor tweets daily for consistency.
+The repository was prepared following these steps:
+1. Project setup with a Python environment and required libraries.
+2. API credentials are loaded from a `.env` file for security.
+3. Weather data is fetched from OpenWeatherMap and formatted into a tweet.
+4. Tweets are sent using Tweepy and scheduled four times daily.
+5. Basic logging assists with monitoring and troubleshooting.
