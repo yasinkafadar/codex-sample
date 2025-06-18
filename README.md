@@ -25,11 +25,6 @@ The script schedules tweets at **08:00**, **12:00**, **16:00**, and **20:00** ea
 
 ## Deployment
 
-You can deploy this project to a server or use a GitHub Actions workflow with a cron
-schedule to run the script automatically.
-
-## Development Tasks
-
 The repository was prepared following these steps:
 1. Project setup with a Python environment and required libraries.
 2. API credentials are loaded from a `.env` file for security.
