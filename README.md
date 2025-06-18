@@ -22,9 +22,6 @@ Run the bot locally with:
 python weather_bot.py
 ```
 The script schedules tweets at **08:00**, **12:00**, **16:00**, and **20:00** each day.
-
-## Deployment
-
 The repository was prepared following these steps:
 1. Project setup with a Python environment and required libraries.
 2. API credentials are loaded from a `.env` file for security.
