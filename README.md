@@ -32,7 +32,6 @@ You can deploy this project to a server or run it automatically with **GitHub Ac
 3. Commit and push the workflow file, then enable GitHub Actions on your repository.
 
 ## Development Tasks
-
 The repository was prepared following these steps:
 1. Project setup with a Python environment and required libraries.
 2. API credentials are loaded from a `.env` file for security.
